@@ -10,11 +10,21 @@
 </head>
 
 <body>
+
+<?php $suits = [
+    'diamonds' => 'faces-suits/diamonds.png',
+    'clubs' => 'faces-suits/clubs.png',
+    'hearts' => 'faces-suits/hearts.png',
+    'spades' => 'faces-suits/spades.png'
+]
+?>
+<?php foreach($suits as $suit => $url) : ?>
+
 <?php for ($i = 1; $i <= 10; $i++) : ?>
 
     <div id="card_number">
         <div class="top_left">
-            <p id="top_left">
+            <p <?php if($suit == 'hearts'| $suit == 'diamonds'){echo 'class="red"';}; ?> id="top_left">
                 <?php if($i == 1){
                     echo 'A';
                 }
@@ -22,10 +32,10 @@
                     echo $i;
                 }
             ?></p>
-            <img id="suit_top_left" src="faces-suits/clubs.png" alt="<?php echo $i . 'of clubs'; ?>">
+            <img id="suit_top_left" src="<?php echo $url ?>" alt="<?php echo $i . 'of clubs'; ?>">
         </div>
         <div class="bottom_right">
-            <p id="bottom_right">
+            <p <?php if($suit == 'hearts'| $suit == 'diamonds'){echo 'class="red"';}; ?> id="bottom_right">
                 <?php if($i == 1){
                     echo 'A';
                 }
@@ -33,97 +43,11 @@
                     echo $i;
                 }
             ?></p>
-            <img id="suit_bottom_right" src="faces-suits/clubs.png" alt="<?php echo $i . 'of clubs'; ?>">
+            <img id="suit_bottom_right" src="<?php echo $url ?>" alt="<?php echo $i . 'of clubs'; ?>">
         </div>
     </div>
 <?php endfor ?>
-
-<?php for ($i = 1; $i <= 10; $i++) : ?>
-
-    <div id="card_number">
-        <div class="top_left">
-            <p class="red" id="top_left">
-                <?php if($i == 1){
-                    echo 'A';
-                }
-                else {
-                    echo $i;
-                }
-            ?></p>
-            <img id="suit_top_left" src="faces-suits/diamonds.png" alt="<?php echo $i . 'of diamonds'; ?>">
-        </div>
-        <div class="bottom_right">
-            <p class="red" id="bottom_right">
-            <?php if($i == 1){
-                    echo 'A';
-                }
-                else {
-                    echo $i;
-                }
-            ?>
-            </p>
-            <img id="suit_bottom_right" src="faces-suits/diamonds.png" alt="<?php echo $i . 'of diamonds'; ?>">
-        </div>
-    </div>
-<?php endfor ?>
-
-<?php for ($i = 1; $i <= 10; $i++) : ?>
-
-    <div id="card_number">
-        <div class="top_left">
-            <p id="top_left">
-            <?php if($i == 1){
-                    echo 'A';
-                }
-                else {
-                    echo $i;
-                }
-            ?></p>
-            <img id="suit_top_left" src="faces-suits/spades.png" alt="<?php echo $i . 'of spades'; ?>">
-        </div>
-        <div class="bottom_right">
-            <p id="bottom_right">
-            <?php if($i == 1){
-                    echo 'A';
-                }
-                else {
-                    echo $i;
-                }
-            ?></p>
-            <img id="suit_bottom_right" src="faces-suits/spades.png" alt="<?php echo $i . 'of spades'; ?>">
-        </div>
-    </div>
-<?php endfor ?>
-
-<?php for ($i = 1; $i <= 10; $i++) : ?>
-
-    <div id="card_number">
-        <div class="top_left">
-            <p class="red" id="top_left">
-            <?php if($i == 1){
-                    echo 'A';
-                }
-                else {
-                    echo $i;
-                }
-            ?>
-            </p>
-            <img id="suit_top_left" src="faces-suits/hearts.png" alt="<?php echo $i . 'of hearts'; ?>">
-        </div>
-        <div class="bottom_right">
-            <p class="red" id="bottom_right">
-                <?php if($i == 1){
-                    echo 'A';
-                }
-                else {
-                    echo $i;
-                }
-            ?></p>
-            <img id="suit_bottom_right" src="faces-suits/hearts.png" alt="<?php echo $i . 'of hearts'; ?>">
-        </div>
-    </div>
-<?php endfor ?>
-
+<?php endforeach ?>
 
 </body>
 
