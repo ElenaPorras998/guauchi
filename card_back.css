@@ -1,0 +1,11 @@
+#card_back {
+position: relative;
+margin: 4em;
+border: 0.5px solid #fd43b7;
+border-radius: 1em;
+height: 7em;
+width: 5em;
+display: inline-block;
+background-image: url(faces-suits/card_back.png);
+background-size: cover;
+}
