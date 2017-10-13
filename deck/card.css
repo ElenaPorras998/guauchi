@@ -60,7 +60,7 @@ p {
     border-radius:15px;
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    background-image: url(faces-suits/card_back.jpg);
     }
     /* default display of .back = none
     i.e. display card face */
