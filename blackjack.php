@@ -119,9 +119,9 @@ shuffle($cards);
                             hand=[];
                         });
                     });        
-                });
-                
+                });    
             });
+            $('#start').hide();
         });
 
         var counter=1;
