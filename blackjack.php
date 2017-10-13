@@ -10,7 +10,10 @@ shuffle($cards);
     <div class="board">
         <div id="upper">
             <div id="bank" class="area">
-                <h4>HOUSE<br>Total $$$</h4>
+            <ul>
+            <h4><li id="amount_house"></li></h4>
+            <h4><li id="amount_player"></li></h4>
+            </ul>
             </div>
             <div id="deck">
                 <?php
