@@ -1,0 +1,90 @@
+body{font-family: 'Press Start 2P', cursive;display: flex;
+background-color: black; margin:0px;padding: 0px;}
+div.instructions{ color: white; font-size:14px; width: 30%;} 
+
+h1 {margin-top: 40px; margin-left: auto;    margin-right: auto;    color: white;    font-size:31px;    align-items:center;}
+h2 {text-shadow: 1px 1px 3px red;}    
+h4 {color: yellow; text-shadow: 1px 1px 2px black; }
+h4.sub{color: yellow;size:12px;}
+h5{color: lightgoldenrodyellow;    margin-left: auto;        margin-right: auto;   text-align: center;}
+h3{color: lightgrey;       margin-left: auto;        margin-right: auto;        text-shadow: 1px 1px 2px black; }
+
+.board{
+    margin-top: 0;
+    background: green;
+    width:70%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    margin-left: auto;
+    margin-right: auto;
+}
+.counter{
+    flex-direction: row;
+    justify-content: top;
+    width:800px;
+    height:63px;
+}
+.area{
+    margin-top: 0;
+    display: block;
+   /* flex-direction: row;*/
+    justify-content: center;
+    background-color: rgb(0, 88, 0); 
+    max-height: 162px; 
+
+}
+    div#bank.area{
+    width:300px;
+        height:63px;}
+
+
+.deck {
+    display: flex;
+    align-items: center;/*this aligns top bottom    */
+    width: 100px;
+    height: 160px;
+    background-color: darkgreen;
+    border: 1px solid white;
+    border-radius: 15px;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: radial-gradient(circle, green , darkgreen, green); /* Standard syntax */
+}
+.red-chip{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width:25px;
+    height: 5px;
+    border: 1px solid black;
+    background-image: linear-gradient(90deg, #AE1C28 10%, red 80%, #AE1C28 20% );
+    font-size: 0; /*inline generate gaps */
+}
+.blue-chip{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width:25px;
+    height: 5px;
+    border: 1px solid black;
+    background-image: linear-gradient(90deg, #2843B9 10%, lightblue 80%, #2843B9 20% );
+    font-size: 0; /*inline generate gaps */
+}
+
+.yellow-chip{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width:25px;
+    height: 5px;
+    border: 1px solid black;
+    background-image: linear-gradient(90deg, #A3B928 10%, white 80%, #A3B928 20% );
+    font-size: 0; /*inline generate gaps */
+}
+.stack{
+    background-color: black;    
+    margin-left: 5px;
+}
