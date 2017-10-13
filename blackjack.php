@@ -124,22 +124,64 @@ shuffle($cards);
             });
         });
 
+        var counter=1;
         $('#hit').click(function(){
-            var counter=1;
             var pos=null;
             var card=null;
-            if (counter==1){
-                pos=$('#player #7').offset();
-                card=$('#deck .card').last();
-                store(card,hand);            
-                card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
-                    card.toggleClass('hidden');
-                    card.detach();
-                    $('div#7.deck').append(card);
-                    var hand_player=hand.slice(0);
-                });
-            };
-            
+            switch (counter)
+            {
+                case 1:
+                    pos=$('#player #7').offset();
+                    card=$('#deck .card').last();
+                    store(card,hand);            
+                    card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
+                        card.toggleClass('hidden');
+                        card.detach();
+                        $('div#7.deck').append(card);
+                        var hand_player=hand.slice(0);
+                    });
+                    counter++;
+                    break;
+                
+                case 2:
+                    pos=$('#player #4').offset();
+                    card=$('#deck .card').last();
+                    store(card,hand);            
+                    card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
+                        card.toggleClass('hidden');
+                        card.detach();
+                        $('div#4.deck').append(card);
+                        var hand_player=hand.slice(0);
+                    });
+                    counter++;
+                    break;
+
+                case 3:  
+                    pos=$('#player #8').offset();
+                    card=$('#deck .card').last();
+                    store(card,hand);            
+                    card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
+                        card.toggleClass('hidden');
+                        card.detach();
+                        $('div#8.deck').append(card);
+                        var hand_player=hand.slice(0);
+                    });
+                    counter++;                
+                    break;
+
+                case 4:
+                    pos=$('#player #3').offset();
+                    card=$('#deck .card').last();
+                    store(card,hand);            
+                    card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
+                        card.toggleClass('hidden');
+                        card.detach();
+                        $('div#3.deck').append(card);
+                        var hand_player=hand.slice(0);
+                    });
+                    counter++;                
+                    break;
+            }
         });        
 
 
@@ -148,13 +190,13 @@ shuffle($cards);
             var pos=null;
             var card=null;
             if (counter==1){
-                pos=$('#player #7').offset();
+                pos=$('#player #9').offset();
                 card=$('#deck .card').last();
                 store(card,hand);            
                 card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
                     card.toggleClass('hidden');
                     card.detach();
-                    $('div#7.deck').append(card);
+                    $('div#9.deck').append(card);
                     var hand_player=hand.slice(0);
                 });
             };
