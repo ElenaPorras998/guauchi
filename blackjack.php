@@ -207,7 +207,25 @@ shuffle($cards);
                 $('div#9.deck').append(card);
                 var hand_player=hand.slice(0);
             });
-        }); 
+        });
+
+        var pointss=2;
+        var housep=10;
+        var userp=5;
+        if(pointss > 21){
+            alert('You lost :(');
+        }
+        else
+        {
+            if(housep<userp){
+                alert('You win! :D');
+            }
+            else{
+                alert('You lost :(');                
+            }
+        }    
+
+
     </script>
 </body>
 </html>
