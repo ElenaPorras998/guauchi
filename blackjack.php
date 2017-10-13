@@ -26,10 +26,10 @@ shuffle($cards);
         <h3>TURN HOUSE</h3>
 
         <div id="house" class="area">     
-            <div class="deck">
+            <div id="first" class="deck">
                 <h5>House Deck</h5>
             </div>
-            <div class="deck">
+            <div id="second" class="deck">
                 <h5>House Deck</h5>
             </div>    
         </div>
@@ -44,6 +44,24 @@ shuffle($cards);
                 <h5>Player Deck </h5> 
             </div>
         </div>
+        <div id="buttons">
+            <button id="start">Start!</button>
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <script>
+        var card=$('#deck .card').last();
+        var color=($('.item-to-basket').css('background-color'));
+        // card.hide();
+
+        $('#start').click(function()
+        {
+            var pos=$('#house #first').offset();
+            card.animate({'top':pos.top, 'left':pos.left}, 1000});        
+        })
+
+    </script>
 </body>
 </html>
