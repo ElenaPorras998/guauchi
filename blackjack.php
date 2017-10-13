@@ -32,6 +32,9 @@ shuffle($cards);
             <div id="2" class="deck">
                 <h5>House Deck</h5>
             </div>
+            <div id="9" class="deck">
+                <h5>House Deck</h5>
+            </div>
         </div>
 
         <h3>1 PLAYER</h3>
@@ -47,7 +50,18 @@ shuffle($cards);
             <div id="5" class="deck">
                 <h5>Player Deck </h5>
             </div>
+
+            <div id="6" class="deck">
+                <h5>Player Deck </h5>
+            </div>
             
+            <div id="7" class="deck">
+                <h5>Player Deck </h5>
+            </div>
+
+            <div id="8" class="deck">
+                <h5>Player Deck </h5>
+            </div>
         </div>
         <div id="buttons">
             <button id="start">Start!</button>
@@ -69,19 +83,19 @@ shuffle($cards);
         {
             var pos=$('#house #1').offset();
             var pos2=$('#house #2').offset();
-            var pos3=$('#player #3').offset();
-            var pos4=$('#player #4').offset();
+            var pos5=$('#player #5').offset();
+            var pos6=$('#player #6').offset();
 
             var card=$('#deck .card').last();
             store(card,hand);
 
-            card.animate({'top':pos.top, 'left':pos.left}, 1000, function(){
+            card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
                 card.detach();
                 $('div#1.deck').append(card);
 
                 card = $('#deck .card').last();
                 store(card,hand);            
-                card.animate({'top':pos2.top, 'left':pos2.left}, 1000, function(){
+                card.animate({'top':pos2.top, 'left':pos2.left}, 500, function(){
                     card.toggleClass('hidden');
                     card.detach();
                     $('div#2.deck').append(card);
@@ -90,14 +104,14 @@ shuffle($cards);
                 
                     card=$('#deck .card').last();
                     store(card,hand);            
-                    card.animate({'top':pos3.top, 'left':pos3.left}, 1000, function(){
+                    card.animate({'top':pos5.top, 'left':pos5.left}, 500, function(){
                         card.toggleClass('hidden');
                         card.detach();
                         $('div#3.deck').append(card);
                     
                         card=$('#deck .card').last();
                         store(card,hand);            
-                        card.animate({'top':pos4.top, 'left':pos4.left}, 1000, function(){
+                        card.animate({'top':pos6.top, 'left':pos6.left}, 500, function(){
                             card.toggleClass('hidden');
                             card.detach();
                             $('div#4.deck').append(card);
@@ -111,17 +125,41 @@ shuffle($cards);
         });
 
         $('#hit').click(function(){
-            var pos5=$('#player #5').offset();
-            card = $('#deck .card').last();
+            var counter=1;
+            var pos=null;
+            var card=null;
+            if (counter==1){
+                pos=$('#player #7').offset();
+                card=$('#deck .card').last();
                 store(card,hand);            
-                card.animate({'top':pos5.top, 'left':pos5.left}, 1000, function(){
+                card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
                     card.toggleClass('hidden');
                     card.detach();
-                    $('div#5.deck').append(card);
-                    var hand_house = hand.slice(0);
-                    hand=[];
+                    $('div#7.deck').append(card);
+                    var hand_player=hand.slice(0);
                 });
+            };
+            
         });        
+
+
+        $('#stand').click(function(){
+            var counter=1;
+            var pos=null;
+            var card=null;
+            if (counter==1){
+                pos=$('#player #7').offset();
+                card=$('#deck .card').last();
+                store(card,hand);            
+                card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
+                    card.toggleClass('hidden');
+                    card.detach();
+                    $('div#7.deck').append(card);
+                    var hand_player=hand.slice(0);
+                });
+            };
+            
+        }); 
     </script>
 </body>
 </html>
