@@ -23,7 +23,8 @@ shuffle($cards);
                     echo $item;
                 }
             ?>
-    </section>
-    
-</body>
+        </section>
+        
+
+    </body>
 </html>

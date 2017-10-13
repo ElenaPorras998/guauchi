@@ -4,7 +4,7 @@ class card{
     public $color=null;
     public $value=null;
     public $type=null;
-    public $ty=null;
+    // public $ty=null;
     
     public function __construct($value, $type){
         if ($type=='heart' || $type=='diamond')
