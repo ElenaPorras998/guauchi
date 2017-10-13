@@ -44,6 +44,10 @@ shuffle($cards);
                 <h5>Player Deck </h5>
             </div>
 
+            <div id="5" class="deck">
+                <h5>Player Deck </h5>
+            </div>
+            
         </div>
         <div id="buttons">
             <button id="start">Start!</button>
@@ -106,6 +110,18 @@ shuffle($cards);
             });
         });
 
+        $('#hit').click(function(){
+            var pos5=$('#player #5').offset();
+            card = $('#deck .card').last();
+                store(card,hand);            
+                card.animate({'top':pos5.top, 'left':pos5.left}, 1000, function(){
+                    card.toggleClass('hidden');
+                    card.detach();
+                    $('div#5.deck').append(card);
+                    var hand_house = hand.slice(0);
+                    hand=[];
+                });
+        });        
     </script>
 </body>
 </html>
