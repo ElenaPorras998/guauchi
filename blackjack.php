@@ -78,6 +78,7 @@ shuffle($cards);
     <script>
         var hand=[];
         var house_points = 0;
+        var player_points = 0;
         function store (card, hand)
         {
             hand.push(card);
