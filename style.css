@@ -1,5 +1,5 @@
-body {font-family: 'Press Start 2P', cursive; background-color: black; margin:0px;padding: 0px;}
-/* div.instructions{ color: white; font-size:14px; width: 30%;} */
+body {font-family: 'Press Start 2P', cursive; display:flex; background-color: black; margin:0px;padding: 0px;}
+div.instructions{ color: white; font-size:14px; width: 30%;}
 h1 {margin-top: 40px; margin-left: auto;    margin-right: auto;    color: white;    font-size:31px;    align-items:center;}
 h2 {text-shadow: 1px 1px 3px red;}
 h4 {color: yellow; text-shadow: 1px 1px 2px black; }
@@ -15,10 +15,9 @@ h3{color: lightgrey;       margin-left: auto;        margin-right: auto;        
     display: flex;
     flex-direction: column;
     justify-content: top;
-    /* margin-left: auto; */
-    /* margin-right: auto; */
+    margin-left: auto;
 }
-/* .counter{
+    /* .counter{
     flex-direction: row;
     justify-content: top;
     width:800px;

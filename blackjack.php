@@ -6,7 +6,7 @@ require_once 'deck/card.php';
 shuffle($cards);
 ?>
 <body>
-<?php// echo $instructions; ?>
+    <?php include 'instructions.php'; ?>
     <div class="board">
         <div id="upper">
             <div id="bank" class="area">
