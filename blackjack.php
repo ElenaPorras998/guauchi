@@ -77,6 +77,7 @@ shuffle($cards);
 
     <script>
         var hand=[];
+        var house_points = 0;
         function store (card, hand)
         {
             hand.push(card);
@@ -103,6 +104,9 @@ shuffle($cards);
                     card.detach();
                     $('div#2.deck').append(card);
                     var hand_house = hand.slice(0);
+                     // this is a variable number
+                    house_points = hand_house[0].data('value');
+                    $('#amount_house').html('House : '+ house_points + ' points.<br>');
                     hand=[];
                 
                     card=$('#deck .card').last();
