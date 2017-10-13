@@ -41,9 +41,10 @@ class card{
 
     public function __toString()
     {
-        return '<div class="card" data-type="'.$this->type.'" data-value="'.$this->value.'">
+        return '<div class="card hidden" data-type="'.$this->type.'" data-value="'.$this->value.'">
         <div class="small upper '.$this->color.'"><p> '.$this->value.' </p><img class="icon" src="faces-suits/'.$this->type.'s.png"></div>
         <div class="small lower '.$this->color.'"><p> '.$this->value.' </p><img class="icon" src="faces-suits/'.$this->type.'s.png"></div>
+        <div class="back"></div>
         </div>';
     }
 } 
