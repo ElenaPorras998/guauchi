@@ -84,6 +84,19 @@ shuffle($cards);
             hand.push(card);
         }
 
+        function num(data)
+        {
+            console.log(data);
+            if (isNaN(data))
+            {
+                data=10;
+                return data;
+            }
+            else{
+                return parseInt(data);
+            }
+        }
+
         $('#start').click(function()
         {
             var pos=$('#house #1').offset();
@@ -95,7 +108,7 @@ shuffle($cards);
             store(card,hand);
             hand_house = hand.slice(0);
                 // this is a variable number
-            house_points += hand_house[0].data('value');
+            house_points = num(hand_house[0].data('value'));
             card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
                 card.detach();
                 $('div#1.deck').append(card);
@@ -108,7 +121,7 @@ shuffle($cards);
                     $('div#2.deck').append(card);
                     var hand_house = hand.slice(0);
                      // this is a variable number
-                    house_points += hand_house[0].data('value');
+                    house_points += num(hand_house[0].data('value'));
                     $('#amount_house').html('House : '+ house_points + ' points.<br>');
                     hand=[];
                     
@@ -120,7 +133,7 @@ shuffle($cards);
                         card.detach();
                         $('div#3.deck').append(card);
                     hand_player = hand.slice(0);
-                    player_points += hand_player[0].data('value');
+                    player_points += num(hand_player[0].data('value'));
                         card=$('#deck .card').last();
                         store(card,hand);            
                         card.animate({'top':pos6.top, 'left':pos6.left}, 500, function(){
@@ -129,7 +142,7 @@ shuffle($cards);
                             $('div#4.deck').append(card);
                             var hand_player=hand.slice(0);
                             hand_player = hand.slice(0);
-                            player_points += hand_player[1].data('value');
+                            player_points += num(hand_player[1].data('value'));
                             $('#amount_player').html('Player : '+ player_points + ' points.<br>');
                             hand=[];
                         });
@@ -214,15 +227,13 @@ shuffle($cards);
             });
         });
 
-        var pointss=2;
-        var housep=10;
-        var userp=5;
-        if(pointss > 21){
+
+        if(player_points > 21){
             alert('You lost :(');
         }
         else
         {
-            if(housep<userp){
+            if(house_points<player_points){
                 alert('You win! :D');
             }
             else{
