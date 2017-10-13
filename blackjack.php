@@ -47,6 +47,8 @@ shuffle($cards);
         </div>
         <div id="buttons">
             <button id="start">Start!</button>
+            <button id="hit">Hit!</button>
+            <button id="stand">Stand!</button>            
         </div>
     </div>
 
