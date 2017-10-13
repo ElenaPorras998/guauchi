@@ -52,14 +52,14 @@ shuffle($cards);
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script>
+
         var card=$('#deck .card').last();
-        var color=($('.item-to-basket').css('background-color'));
-        // card.hide();
+        //card.hide();
 
         $('#start').click(function()
         {
             var pos=$('#house #first').offset();
-            card.animate({'top':pos.top, 'left':pos.left}, 1000});        
+            card.animate({'top':pos.top, 'left':pos.left}, 1000);        
         })
 
     </script>
