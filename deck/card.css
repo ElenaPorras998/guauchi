@@ -49,3 +49,22 @@ p {
 .red{
     color: #79090E;
 }
+
+
+.hidden .back{
+    display: block;
+    position: absolute;
+    border: 1px solid black;
+    width: 100px;
+    height: 160px;
+    border-radius:15px;
+    display: flex;
+    justify-content: space-around;
+    background-image: url(faces-suits/card_back.jpg);
+    }
+    /* default display of .back = none
+    i.e. display card face */
+    .back {
+    display: none;
+    }
+    
