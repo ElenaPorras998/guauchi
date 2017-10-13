@@ -5,9 +5,9 @@ section#cards{
 
 div.card{
     position: absolute;
-    width: 13em;
-    height: 17em;
-    border-radius:1em;
+    width: 100px;
+    height: 160px;
+    border-radius:15px;
     border: 1px solid black;
     background-color: white;
     display: flex;
