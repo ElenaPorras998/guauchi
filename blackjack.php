@@ -53,7 +53,30 @@ shuffle($cards);
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script>
-        
+
+$('#start').click(function()
+{
+    
+    debugger;
+    //select last
+    var card=$('#deck .card').last();
+    //flag the class of the card
+    
+    //addClass('used')
+    card.addClass('used');
+
+    card.detach()
+    $('.hand').append(card)
+    //
+    var color=($('.item-to-basket').css('background-color'));
+    
+    var pos=$('#house #first').offset();
+    //
+    store(card)
+    card.animate({'top':pos.top, 'left':pos.left}, 1000); 
+    card.remove();       
+})
+
     </script>
 </body>
 </html>
