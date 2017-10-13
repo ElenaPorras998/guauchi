@@ -59,35 +59,32 @@ $('#start').click(function()
     
     var deck=$('#deck');
     //select last
-    var card=$('#deck .card').last();
     //flag the class of the card
     
-    //addClass('used')
-    card.addClass('used');
-
+    var card=$('#deck .card').last();
     card.detach()
-    $('#1.deck').append(card)
+    $('div#1.deck').append(card)
+    var card=$('#deck .card').last();
+    card.detach()
+    $('div#2.deck').append(card)
+    var card=$('#deck .card').last();
+    card.detach()
+    $('div#3.deck').append(card)
+    var card=$('#deck .card').last();
+    card.detach()
+    $('div#4.deck').append(card)
     //
-    var color=($('.item-to-basket').css('background-color'));
-    
-    var pos=$('#house #first').offset();
+    // var pos=$('#house #first').offset();
     //
-    store(card)
-    card.animate({'top':pos.top, 'left':pos.left}, 1000); 
-    card.remove();       
-
-    $('#start').click(function()
-    {
-        var pos=$('#house #1').offset();
-        var pos2=$('#house #2').offset();
-        var pos3=$('#player #3').offset();
-        var pos4=$('#player #4').offset();
-        card.animate({'top':pos.top, 'left':pos.left}, 1000, function(){
-            card.animate({'top':pos2.top, 'left':pos2.left}, 1000, function(){
-                card.animate({'top':pos3.top, 'left':pos3.left}, 1000, function(){
-                    card.animate({'top':pos4.top, 'left':pos4.left}, 1000);});});
-        });
-    })
+        // var pos=$('#house #1').offset();
+        // var pos2=$('#house #2').offset();
+        // var pos3=$('#player #3').offset();
+        // var pos4=$('#player #4').offset();
+        // card.animate({'top':pos.top, 'left':pos.left}, 1000, function(){
+        //     card.animate({'top':pos2.top, 'left':pos2.left}, 1000, function(){
+        //         card.animate({'top':pos3.top, 'left':pos3.left}, 1000, function(){
+        //             card.animate({'top':pos4.top, 'left':pos4.left}, 1000);});});
+        // });      
 })
 
     </script>
