@@ -189,21 +189,17 @@ shuffle($cards);
 
 
         $('#stand').click(function(){
-            var counter=1;
             var pos=null;
             var card=null;
-            if (counter==1){
-                pos=$('#player #9').offset();
-                card=$('#deck .card').last();
-                store(card,hand);            
-                card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
-                    card.toggleClass('hidden');
-                    card.detach();
-                    $('div#9.deck').append(card);
-                    var hand_player=hand.slice(0);
-                });
-            };
-            
+            pos=$('#house #9').offset();
+            card=$('#deck .card').last();
+            store(card,hand);            
+            card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
+                card.toggleClass('hidden');
+                card.detach();
+                $('div#9.deck').append(card);
+                var hand_player=hand.slice(0);
+            });
         }); 
     </script>
 </body>
