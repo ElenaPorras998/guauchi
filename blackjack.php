@@ -94,8 +94,8 @@ shuffle($cards);
             var card=$('#deck .card').last();
             store(card,hand);
             hand_house = hand.slice(0);
-                     // this is a variable number
-                    house_points += hand_house[0].data('value');
+                // this is a variable number
+            house_points += hand_house[0].data('value');
             card.animate({'top':pos.top, 'left':pos.left}, 500, function(){
                 card.detach();
                 $('div#1.deck').append(card);
@@ -111,14 +111,16 @@ shuffle($cards);
                     house_points += hand_house[0].data('value');
                     $('#amount_house').html('House : '+ house_points + ' points.<br>');
                     hand=[];
-                
+                    
                     card=$('#deck .card').last();
-                    store(card,hand);            
+                    store(card,hand);      
+
                     card.animate({'top':pos5.top, 'left':pos5.left}, 500, function(){
                         card.toggleClass('hidden');
                         card.detach();
                         $('div#3.deck').append(card);
-                    
+                    hand_player = hand.slice(0);
+                    player_points += hand_player[0].data('value');
                         card=$('#deck .card').last();
                         store(card,hand);            
                         card.animate({'top':pos6.top, 'left':pos6.left}, 500, function(){
@@ -126,6 +128,9 @@ shuffle($cards);
                             card.detach();
                             $('div#4.deck').append(card);
                             var hand_player=hand.slice(0);
+                            hand_player = hand.slice(0);
+                            player_points += hand_player[1].data('value');
+                            $('#amount_player').html('Player : '+ player_points + ' points.<br>');
                             hand=[];
                         });
                     });        
