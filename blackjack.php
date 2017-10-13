@@ -70,13 +70,13 @@ shuffle($cards);
             store(card,hand);
 
             card.animate({'top':pos.top, 'left':pos.left}, 1000, function(){
-                console.log(card, pos);
                 card.detach();
                 $('div#1.deck').append(card);
 
                 card = $('#deck .card').last();
                 store(card,hand);            
                 card.animate({'top':pos2.top, 'left':pos2.left}, 1000, function(){
+                    card.toggleClass('hidden');
                     card.detach();
                     $('div#2.deck').append(card);
                     var hand_house = hand.slice(0);
@@ -85,16 +85,19 @@ shuffle($cards);
                     card=$('#deck .card').last();
                     store(card,hand);            
                     card.animate({'top':pos3.top, 'left':pos3.left}, 1000, function(){
+                        card.toggleClass('hidden');
                         card.detach();
                         $('div#3.deck').append(card);
                     
                         card=$('#deck .card').last();
                         store(card,hand);            
-                        card.animate({'top':pos4.top, 'left':pos4.left}, 1000);
-                        card.detach();
-                        $('div#4.deck').append(card);
-                        var hand_player=hand.slice(0);
-                        hand=[];
+                        card.animate({'top':pos4.top, 'left':pos4.left}, 1000, function(){
+                            card.toggleClass('hidden');
+                            card.detach();
+                            $('div#4.deck').append(card);
+                            var hand_player=hand.slice(0);
+                            hand=[];
+                        });
                     });        
                 });
                 
