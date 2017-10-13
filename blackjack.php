@@ -53,39 +53,53 @@ shuffle($cards);
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script>
+        var hand=[];
+        function store (card, hand)
+        {
+            hand.push(card);
+        }
 
-$('#start').click(function()
-{
-    
-    var deck=$('#deck');
-    //select last
-    //flag the class of the card
-    
-    var card=$('#deck .card').last();
-    card.detach()
-    $('div#1.deck').append(card)
-    var card=$('#deck .card').last();
-    card.detach()
-    $('div#2.deck').append(card)
-    var card=$('#deck .card').last();
-    card.detach()
-    $('div#3.deck').append(card)
-    var card=$('#deck .card').last();
-    card.detach()
-    $('div#4.deck').append(card)
-    //
-    // var pos=$('#house #first').offset();
-    //
-        // var pos=$('#house #1').offset();
-        // var pos2=$('#house #2').offset();
-        // var pos3=$('#player #3').offset();
-        // var pos4=$('#player #4').offset();
-        // card.animate({'top':pos.top, 'left':pos.left}, 1000, function(){
-        //     card.animate({'top':pos2.top, 'left':pos2.left}, 1000, function(){
-        //         card.animate({'top':pos3.top, 'left':pos3.left}, 1000, function(){
-        //             card.animate({'top':pos4.top, 'left':pos4.left}, 1000);});});
-        // });      
-})
+        $('#start').click(function()
+        {
+            var pos=$('#house #1').offset();
+            var pos2=$('#house #2').offset();
+            var pos3=$('#player #3').offset();
+            var pos4=$('#player #4').offset();
+
+            var card=$('#deck .card').last();
+            store(card,hand);
+
+            card.animate({'top':pos.top, 'left':pos.left}, 1000, function(){
+                console.log(card, pos);
+                card.detach();
+                $('div#1.deck').append(card);
+
+                card = $('#deck .card').last();
+                store(card,hand);            
+                card.animate({'top':pos2.top, 'left':pos2.left}, 1000, function(){
+                    card.detach();
+                    $('div#2.deck').append(card);
+                    var hand_house = hand.slice(0);
+                    hand=[];
+                
+                    card=$('#deck .card').last();
+                    store(card,hand);            
+                    card.animate({'top':pos3.top, 'left':pos3.left}, 1000, function(){
+                        card.detach();
+                        $('div#3.deck').append(card);
+                    
+                        card=$('#deck .card').last();
+                        store(card,hand);            
+                        card.animate({'top':pos4.top, 'left':pos4.left}, 1000);
+                        card.detach();
+                        $('div#4.deck').append(card);
+                        var hand_player=hand.slice(0);
+                        hand=[];
+                    });        
+                });
+                
+            });
+        });
 
     </script>
 </body>
