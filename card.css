@@ -1,13 +1,15 @@
 section#cards{
-    display: flex;
-    justify-content: space-around;
+    /* display: flex;
+    justify-content: space-around; */
 }
 
 div.card{
-    width: 13em;
-    height: 17em;
-    border-radius:1em;
+    position: absolute;
+    width: 100px;
+    height: 160px;
+    border-radius:15px;
     border: 1px solid black;
+    background-color: white;
     display: flex;
     justify-content: space-around;
 }
@@ -44,10 +46,24 @@ p {
     font-weight: bold;
 }
 
-.heart{
+.red{
     color: #79090E;
 }
 
-.diamond{
-    color:#79090E;
+.hidden .back{
+    display: block;
+    position: absolute;
+    border: 1px solid black;
+    width: 100px;
+    height: 160px;
+    border-radius:15px;
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    }
+    
+/* default display of .back = none
+i.e. display card face */
+.back {
+    display: none;
 }
