@@ -1,4 +1,4 @@
-<?php 
+<?php
 include 'page_header.php';
 require_once 'deck/list.php';
 require_once 'deck/card.php';
@@ -6,7 +6,7 @@ require_once 'deck/card.php';
 shuffle($cards);
 ?>
 <body>
-<?php// echo $instructions; ?>    
+<?php// echo $instructions; ?>
     <div class="board">
         <div id="upper">
             <div id="bank" class="area">
@@ -25,24 +25,25 @@ shuffle($cards);
 
         <h3>TURN HOUSE</h3>
 
-        <div id="house" class="area">     
-            <div id="first" class="deck">
+        <div id="house" class="area">
+            <div id="1" class="deck">
                 <h5>House Deck</h5>
             </div>
-            <div id="second" class="deck">
+            <div id="2" class="deck">
                 <h5>House Deck</h5>
-            </div>    
+            </div>
         </div>
 
         <h3>1 PLAYER</h3>
         <div id="player" class="area">
-            <div class="deck">
+            <div id="3" class="deck">
                 <h5>Player Deck </h5>
             </div>
-        
-            <div class="deck">
-                <h5>Player Deck </h5> 
+
+            <div id="4" class="deck">
+                <h5>Player Deck </h5>
             </div>
+
         </div>
         <div id="buttons">
             <button id="start">Start!</button>
@@ -52,16 +53,7 @@ shuffle($cards);
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
     <script>
-
-        var card=$('#deck .card').last();
-        //card.hide();
-
-        $('#start').click(function()
-        {
-            var pos=$('#house #first').offset();
-            card.animate({'top':pos.top, 'left':pos.left}, 1000);        
-        })
-
+        
     </script>
 </body>
 </html>
